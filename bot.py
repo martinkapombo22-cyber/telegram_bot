@@ -73,7 +73,6 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif text == "📞 Contact Support":
         await update.message.reply_text(
             "📞 Support Mediabooster22\n\n"
-            "Notre équipe est là pour vous accompagner.\n"
             "Telegram : @Mediabooster_Support\n"
             "Email : support@mediabooster22.com"
         )
@@ -86,8 +85,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif text == "❓ Aide & Infos":
         await update.message.reply_text(
             "Besoin d'aide ?\n\n"
-            "Utilisez les boutons du menu pour naviguer.\n"
-            "Si vous avez une commande en cours, contactez le support."
+            "Utilisez les boutons du menu pour naviguer."
         )
 
     elif any(w in text_lower for w in ["bonjour", "salut", "hello"]):
@@ -124,11 +122,12 @@ def main():
     )
 
     app.add_handler(conv_handler)
-
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
     print("✅ Mediabooster22 Bot est opérationnel")
 
     app.run_polling()
+
+
 if name == "main":
     main()
