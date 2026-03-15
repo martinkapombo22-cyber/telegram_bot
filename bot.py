@@ -130,7 +130,5 @@ def main():
     print("✅ Mediabooster22 Bot est opérationnel")
 
     app.run_polling()
-
-
 if name == "main":
     main()
